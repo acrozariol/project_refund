@@ -21,46 +21,46 @@
 
     <section>
       <form>
-        <h1>Solicitação de reembolso</h1>
+        <h1>Refund request</h1>
         <p>
-          Informe os dados da despesa para solicitar reembolso. A despesa será
-          analisada e reembolsada em até 30 dias.
+          Please provide the expense details to request reimbursement. The expense will be reviewed and reimbursed
+          within 30 days.
         </p>
 
         <fieldset>
-          <legend>Nome da despesa</legend>
+          <legend>Expense Name</legend>
           <input type="text" id="expense" name="expense" required />
         </fieldset>
 
         <div class="inputs-row">
           <fieldset>
-            <legend>Categoria</legend>
+            <legend>Category</legend>
             <select id="category" name="category" required>
-              <option value="" disabled selected hidden>Selecione</option>
-              <option value="food">Alimentação</option>
-              <option value="accommodation">Hospedagem</option>
-              <option value="services">Serviços</option>
-              <option value="transport">Transporte</option>
-              <option value="others">Outros</option>
+              <option value="" disabled selected hidden>Select</option>
+              <option value="food">Food</option>
+              <option value="accommodation">Accommodation</option>
+              <option value="services">Services</option>
+              <option value="transport">Transport</option>
+              <option value="others">Others</option>
             </select>
           </fieldset>
 
           <fieldset>
-            <legend>Valor da despesa</legend>
-            <input type="text" name="amount" id="amount" placeholder="R$ 0,00" required />
+            <legend>Expense amount</legend>
+            <input type="text" name="amount" id="amount" placeholder="$ 0.00" required />
           </fieldset>
         </div>
 
-        <button type="submit">Adicionar despesa</button>
+        <button type="submit">Add expense</button>
       </form>
 
       <aside>
         <header>
           <p>
-            Minhas solicitações <i>&bullet;</i>
-            <span>0 despesa</span>
+            My requests <i>&bullet;</i>
+            <span>0 expense</span>
           </p>
-          <h2><small>R$</small>0,00</h2>
+          <h2><small>$</small>0.00</h2>
         </header>
 
         <ul>

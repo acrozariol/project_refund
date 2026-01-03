@@ -16,13 +16,13 @@ amount.oninput = () => {
   // Transformar o valor em centavos (numero)
   value = Number(value) / 100;
 
-  amount.value = formatCurrencyBRL(value); // Atualiza o valor do input para aceitar apenas números.
+  amount.value = formatCurrencyUSD(value); // Atualiza o valor do input para aceitar apenas números.
 };
 
-function formatCurrencyBRL(value) {
-  value = value.toLocaleString("pt-BR", {
+function formatCurrencyUSD(value) {
+  value = value.toLocaleString("en-US", {
     style: "currency",
-    currency: "BRL",
+    currency: "USD",
   });
   return value;
 }
@@ -75,9 +75,9 @@ function expenseAdd(newExpense) {
     // Cria o valor da despensa
     const expenseAmount = document.createElement("span");
     expenseAmount.classList.add("expense-amount");
-    expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount
+    expenseAmount.innerHTML = `<small>$</small>${newExpense.amount
       .toUpperCase()
-      .replace("R$", "")}`;
+      .replace("$", "")}`;
 
     // Cria o ícone de remover da depensa
     const removeIcon = document.createElement("img");
@@ -132,7 +132,7 @@ function updateTotals() {
       // Verifica se é um número válido
       if (isNaN(value)) {
         return alert(
-          "Não foi possível calcular o total. O valor não parece ser um número."
+          "It was not possible to calculate the total. The value does not appear to be a number."
         );
       }
 
@@ -141,19 +141,19 @@ function updateTotals() {
     }
 
     // Cria a span pra adicionar o R$ formatado
-    const symbolBRL = document.createElement("small");
-    symbolBRL.textContent = "R$";
+    const symbolUSD = document.createElement("small");
+    symbolUSD.textContent = "$";
 
     // Formata o valor e remove o R$ que será exibido pela small com um estilo customizado
-    total = formatCurrencyBRL(total).toUpperCase().replace("R$", "");
+    total = formatCurrencyUSD(total).toUpperCase().replace("$", "");
 
     // Limpa o conteúdo do elemento
     expensesTotal.innerHTML = "";
 
     // Adiciona o símbolo da moeda e o valor total formatado
-    expensesTotal.append(symbolBRL, total);
+    expensesTotal.append(symbolUSD, total);
   } catch (error) {
-    alert("Não foi possível atualizar os totais.");
+    alert("It was not possible to update the totals.");
     console.log(error);
   }
 }
