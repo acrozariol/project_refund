@@ -20,10 +20,11 @@ amount.oninput = () => {
 };
 
 function formatCurrencyUSD(value) {
-  value = value.toLocaleString("en-US", {
+  value = value.toLocaleString("pt-BR", {
     style: "currency",
-    currency: "USD",
+    currency: "BRL",
   });
+
   return value;
 }
 
@@ -75,9 +76,9 @@ function expenseAdd(newExpense) {
     // Cria o valor da despensa
     const expenseAmount = document.createElement("span");
     expenseAmount.classList.add("expense-amount");
-    expenseAmount.innerHTML = `<small>$</small>${newExpense.amount
+    expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount
       .toUpperCase()
-      .replace("$", "")}`;
+      .replace("R$", "")}`;
 
     // Cria o ícone de remover da depensa
     const removeIcon = document.createElement("img");
@@ -126,7 +127,7 @@ function updateTotals() {
         .replace(/[^\d,]/g, "")
         .replace(",", ".");
 
-      // Converte o valor para float
+      // // Converte o valor para float
       value = parseFloat(value);
 
       // Verifica se é um número válido
@@ -142,10 +143,10 @@ function updateTotals() {
 
     // Cria a span pra adicionar o R$ formatado
     const symbolUSD = document.createElement("small");
-    symbolUSD.textContent = "$";
+    symbolUSD.textContent = "R$";
 
     // Formata o valor e remove o R$ que será exibido pela small com um estilo customizado
-    total = formatCurrencyUSD(total).toUpperCase().replace("$", "");
+    total = formatCurrencyUSD(total).toUpperCase().replace("R$", "");
 
     // Limpa o conteúdo do elemento
     expensesTotal.innerHTML = "";
